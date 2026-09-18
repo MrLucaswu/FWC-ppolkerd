@@ -4,20 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Focus - Portfolio</title>
-    
-    <!-- นำเข้า Bootstrap CSS และ Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    
-    <!-- นำเข้าไฟล์ CSS ของเราเอง -->
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body data-bs-spy="scroll" data-bs-target="#mainNavbar" tabindex="0" style="background-color: hsl(40, 50%, 50%);">
-
-    <!-- ==========================================
-         ส่วนที่ 0: Navigation Bar 
-         ========================================== -->
     <nav id="mainNavbar" class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm px-4" style="background-color: #123F36;">
         <a class="navbar-brand fw-bold fs-4" href="index.html">⬅ Portfolio</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -33,34 +24,23 @@
             </ul>
         </div>
     </nav>
-
-    <!-- ==========================================
-         ส่วนที่ 1: About Me (พื้นหลัง Parallax)
-         ========================================== -->
     <section id="about" class="bg-parallax-about">
         <div class="container min-vh-100 d-flex flex-column justify-content-center align-items-center text-center py-5">
             <h1 class="display-4 fw-bold mb-4 border-bottom pb-2" style="color: #123F36; text-shadow: 2px 3px 6px rgba(0,0,0,0.2);">About Me</h1>
-            <img src="focus.jpg" alt="FOCUS Profile" class="rounded-circle mb-4 shadow portfolio-img" style="width: 250px; height: 250px; object-fit: cover; object-position: top;">
+            <img src="images.focua/FOCUS.jpg" alt="FOCUS Profile" class="rounded-circle mb-4 shadow portfolio-img" style="width: 250px; height: 250px; object-fit: cover; object-position: top;">
             <h2 class="fw-bold" style="text-shadow: 1px 2px 4px rgba(0,0,0,0.15);">Puttimate Polkerd (Focus)</h2>
             <p class="lead w-75 mx-auto mt-3 fw-medium" style="color: #000000;">
                 An Engineering Student at King Mongkut's Institute of Technology Ladkrabang (KMITL).
             </p>
         </div>
     </section>
-
-    <!-- ==========================================
-         ส่วนที่ 2: My Skills (พื้นหลัง Parallax)
-         ========================================== -->
     <section id="skills" class="bg-parallax-skills">
-        <!-- ลบ min-vh-100 ออกในส่วนเนื้อหาหลัก เพื่อไม่ให้กล่องยืดเกินไป -->
         <div class="container d-flex flex-column justify-content-center py-5">
             <h1 class="display-4 fw-bold mb-5 text-center border-bottom pb-2" style="color: #123F36;">My Skills</h1>
-            
             <div class="row g-5 align-items-start justify-content-center">
-                <!-- คอลัมน์ซ้าย: วิดีโอ PLC -->
                 <div class="col-lg-6 text-center">
                     <video autoplay loop muted playsinline class="img-fluid rounded-4 shadow-lg mb-4" style="width: 100%; max-height: 500px; object-fit: cover;">
-                        <source src="mistu.mp4" type="video/mp4">
+                        <source src="images.focua/mistu.mp4" type="video/mp4">
                     </video>
                     <h3 class="fw-bold" style="color: #123F36;">Programmable Logic Controller</h3>
                     <p class="text-muted fs-5 mt-3 text-start" style="line-height: 1.8;">
@@ -69,10 +49,7 @@
                         These foundational PLC programming skills can be practically applied to various real-world industrial automation systems, such as conveyor belts, automated packaging machines, part-sorting systems, and manufacturing processes.
                     </p>
                 </div>
-
-                <!-- คอลัมน์ขวา: งาน Staff -->
-                <div class="col-lg-6 text-center">
-                    <img src="งาน.jpg" alt="My Work" class="img-fluid rounded-4 shadow-lg mb-4" style="width: 100%; max-height: 500px; object-fit: cover;">
+                <div class="col-lg-6 text-center"><img src="images.focua/งาน.jpg" alt="My Work" class="w-100 rounded-4 shadow-lg mb-4" style="height: 350px; object-fit: cover;">
                     <h3 class="fw-bold" style="color: #123F36;">PLC Workshop Teaching Assistant (Staff)</h3>
                     <p class="text-muted fs-5 mt-3 text-start" style="line-height: 1.8;">
                         Served as a staff member for the PLC workshop at the K-Engineering event, acting as a teaching assistant and providing guidance on Ladder Logic programming to attendees, including students and parents. 
@@ -83,18 +60,13 @@
             </div>
         </div>
     </section>
-
-    <!-- ==========================================
-         ส่วนที่ 3: My Projects (พื้นหลัง Parallax)
-         ========================================== -->
     <section id="projects" class="bg-parallax-projects">
         <div class="container min-vh-100 d-flex flex-column justify-content-center py-5">
             <h1 class="display-4 fw-bold mb-5 text-center border-bottom pb-2" style="color: #123F36;">My Projects</h1>
             
             <div class="row g-5 justify-content-center align-items-center">
-                <!-- Project 1 -->
                 <div class="col-lg-8 text-center">
-                    <img src="robot.jpg" alt="Project 1" class="img-fluid rounded-4 shadow-lg mb-4" style="max-height: 550px; width: auto;">
+                    <img src="images.focua/robot.jpg" alt="Project 1" class="img-fluid rounded-4 shadow-lg mb-4" style="max-height: 550px; width: auto;">
                     <h3 class="fw-bold mb-3">Alpha Project</h3>
                     <p class="fs-5 mb-4 fw-medium text-start" style="color: #000000; line-height: 1.8;">
                         Participated in the Freshy Robot (Battle Bot) competition as a core team member. Primarily responsible for designing and assembling the robot's main control board and the remote controller board.
@@ -105,21 +77,14 @@
             </div>
         </div>
     </section>
-
-    <!-- ==========================================
-         ส่วนที่ 4: Contact Me
-         ========================================== -->
     <section id="contact" class="container-fluid d-flex flex-column justify-content-center align-items-center text-center text-white py-5" style="background-color: #123F36;">
         <h1 class="display-4 fw-bold mb-4">Contact Me</h1>
         <p class="fs-5 mb-4"><i class="bi bi-envelope-fill me-2"></i> 68011768@kmitl.ac.th</p>
-        
         <div class="d-flex gap-4">
             <a href="https://www.facebook.com/phut.hi.meth.phl.keid" target="_blank" class="text-white fs-1 hover-zoom"><i class="bi bi-facebook"></i></a>
             <a href="https://www.instagram.com/puttimate_polkerd?stkn=MWJhbGhrM2MwZXJtZA%3D%3D&utm_source=qr" target="_blank" class="text-white fs-1 hover-zoom"><i class="bi bi-instagram"></i></a>
         </div>
     </section>
-
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

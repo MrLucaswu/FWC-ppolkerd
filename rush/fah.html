@@ -1,41 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- ตั้งค่าการเข้ารหัสภาษาให้เบราว์เซอร์อ่านภาษาไทยได้ถูกต้อง -->
     <meta charset="UTF-8">
-    
-    <!-- บังคับให้หน้าเว็บปรับขนาดพอดีกับหน้าจอมือถือและแท็บเล็ต (Responsive) -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- ชื่อแท็บที่จะแสดงบนเบราว์เซอร์ -->
     <title>FAH - Portfolio</title>
-    
-    <!-- นำเข้า Bootstrap CSS สำหรับจัดโครงสร้างและตกแต่งเว็บ -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <!-- นำเข้า Bootstrap Icons สำหรับใช้งานไอคอนต่างๆ เช่น Facebook, Instagram -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    
-    <!-- นำเข้าไฟล์ CSS ของเราเอง -->
     <link rel="stylesheet" href="style.css">
 </head>
-
-<!-- data-bs-spy="scroll": ทำให้เมนูนำทางไฮไลท์ตามตำแหน่งที่เลื่อนจอ, กำหนดสีพื้นหลังหลักเป็นสีครีม -->
 <body data-bs-spy="scroll" data-bs-target="#mainNavbar" tabindex="0" style="background-color: #FFF9F2;">
-
-    <!-- ==========================================
-         ส่วนที่ 0: Navigation Bar (แถบเมนูด้านบน)
-         ========================================== -->
-    <!-- ใช้สีทอง (#C49A45) ตามสไตล์ของฟ้า, fixed-top ทำให้เมนูติดขอบบนเสมอ -->
     <nav id="mainNavbar" class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm px-4" style="background-color: #C49A45;">
         <a class="navbar-brand fw-bold fs-4" href="index.html">⬅ Portfolio</a>
-        
-        <!-- ปุ่มแฮมเบอร์เกอร์สำหรับหน้าจอมือถือ -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
         </button>
-        
-        <!-- รายการเมนู จัดให้อยู่ชิดขวา (justify-content-end) -->
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav fs-5 fw-medium gap-2">
                 <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
@@ -47,58 +25,33 @@
         </div>
     </nav>
 
-    <!-- ==========================================
-         ส่วนที่ 1: About Me (พื้นหลัง Parallax แนววิทยาศาสตร์/การศึกษา)
-         ========================================== -->
-    <!-- ใช้ Inline Style เฉพาะตัวของฟ้า เพื่อไม่ให้ซ้ำกับของโฟกัส -->
-    <section id="about" style="background-image: linear-gradient(rgba(255, 249, 242, 0.9), rgba(255, 249, 242, 0.9)), url('https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=1920&q=80'); background-attachment: fixed; background-position: center; background-size: cover;">
-        <!-- จัดเนื้อหาให้อยู่กึ่งกลางหน้าจอ -->
+    <section id="about" style="background-image: linear-gradient(rgba(255, 249, 242, 0.88), rgba(255, 249, 242, 0.88)), url('https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=1920&q=80'); background-attachment: fixed; background-position: center; background-size: cover;">
         <div class="container min-vh-100 d-flex flex-column justify-content-center align-items-center text-center py-5">
             <h1 class="display-4 fw-bold mb-4 border-bottom pb-2" style="color: #C49A45; text-shadow: 2px 3px 6px rgba(0,0,0,0.2);">About Me</h1>
-            
-            <!-- รูปโปรไฟล์: ปรับ object-position เป็น center เพื่อให้เห็นใบหน้าตรงชัดเจนไม่ถูกตัด -->
-            <img src="fah.jpg" alt="Fah Profile" class="rounded-circle mb-4 shadow portfolio-img" style="width: 250px; height: 250px; object-fit: cover; object-position: center;">
-            
-            <!-- ชื่อและคำบรรยายตัวเอง -->
+            <img src="images.fah/fah.jpg" alt="Fah Profile" class="rounded-circle mb-4 shadow portfolio-img" style="width: 250px; height: 250px; object-fit: cover; object-position: center;">
             <h2 class="fw-bold" style="text-shadow: 1px 2px 4px rgba(0,0,0,0.15);">Kanyanat Khongmueang (Fah)</h2>
-            <p class="lead w-75 mx-auto mt-3 fw-medium" style="color: #020202;">
+            <p class="lead w-75 mx-auto mt-3 fw-medium" style="color: #123F36;">
                 An Science Student at King Mongkut's Institute of Technology Ladkrabang (KMITL). 
             </p>
         </div>
     </section>
 
-    <!-- ==========================================
-         ส่วนที่ 2: My Skills (พื้นหลัง Parallax แนวแอปพลิเคชัน/โค้ดดิ้ง)
-         ========================================== -->
     <section id="skills" style="background-image: linear-gradient(rgba(232, 220, 196, 0.9), rgba(232, 220, 196, 0.9)), url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1920&q=80'); background-attachment: fixed; background-position: center; background-size: cover;">
         <div class="container d-flex flex-column justify-content-center py-5">
             <h1 class="display-4 fw-bold mb-5 text-center border-bottom pb-2" style="color: #C49A45;">My Skills</h1>
-            
-            <!-- กล่องเนื้อหาหลัก: ควบคุมความกว้างให้อ่านง่าย -->
             <div class="col-lg-10 mx-auto text-center">
-                
-                <!-- ชุดรูปภาพ 3 รูป เรียงต่อกันแนวนอน -->
-                <!-- ใช้คลาส ratio ratio-4x3 และ object-fit: contain เพื่อให้แสดงภาพเต็ม 100% ทุกรูปในสัดส่วนที่เท่ากันเป๊ะโดยไม่โดนตัดขอบ -->
-                <div class="row g-4 mb-4 justify-content-center">
+                <div class="row g-4 mb-5 justify-content-center">
                     <div class="col-lg-4 col-md-6">
-                        <div class="ratio ratio-4x3 rounded-4 shadow-lg overflow-hidden bg-white p-2">
-                            <img src="ep1.JPG" alt="EasyPark App 1" class="w-100 h-100 rounded-3" style="object-fit: contain;">
-                        </div>
+                        <img src="images.fah/ep1.JPG" alt="EasyPark App 1" class="w-100 rounded-4 shadow-lg" style="height: 350px; object-fit: cover;">
                     </div>
                     <div class="col-lg-4 col-md-6">
-                        <div class="ratio ratio-4x3 rounded-4 shadow-lg overflow-hidden bg-white p-2">
-                            <img src="ep2.JPG" alt="EasyPark App 2" class="w-100 h-100 rounded-3" style="object-fit: contain;">
-                        </div>
+                        <img src="images.fah/ep2.JPG" alt="EasyPark App 2" class="w-100 rounded-4 shadow-lg" style="height: 350px; object-fit: cover;">
                     </div>
                     <div class="col-lg-4 col-md-6">
-                        <div class="ratio ratio-4x3 rounded-4 shadow-lg overflow-hidden bg-white p-2">
-                            <img src="ep3.JPG" alt="EasyPark App 3" class="w-100 h-100 rounded-3" style="object-fit: contain;">
-                        </div>
+                        <img src="images.fah/ep3.JPG" alt="EasyPark App 3" class="w-100 rounded-4 shadow-lg" style="height: 350px; object-fit: cover;">
                     </div>
                 </div>
-
-                <!-- หัวข้อและคำบรรยาย: จัดชิดซ้ายและเพิ่มระยะห่างบรรทัด -->
-                <h3 class="fw-bold mb-3" style="color: #C49A45;">EasyPark – Smart Parking Application</h3>
+                <h3 class="fw-bold mb-3" style="color: #123F36;">EasyPark – Smart Parking Application</h3>
                 <p class="fs-5 fw-medium text-start" style="color: #000000; line-height: 1.8;">
                     Developed a smart parking application called “EasyPark” that allows users to view and search for available parking spaces across multiple parking zones and floors. The application displays individual parking spaces and their current availability status through a simple and user-friendly interface.
                     <br><br>
@@ -108,32 +61,19 @@
         </div>
     </section>
 
-    <!-- ==========================================
-         ส่วนที่ 3: Showcase (พื้นหลัง Parallax แนวสนามบิน/การบิน สำหรับงาน AOT)
-         ========================================== -->
     <section id="projects" style="background-image: linear-gradient(rgba(255, 249, 242, 0.9), rgba(255, 249, 242, 0.9)), url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1920&q=80'); background-attachment: fixed; background-position: center; background-size: cover;">
         <div class="container d-flex flex-column justify-content-center py-5">
-            <h1 class="display-4 fw-bold mb-5 text-center border-bottom pb-2" style="color: #C49A45;">Showcase</h1>
-            
+            <h1 class="display-4 fw-bold mb-5 text-center border-bottom pb-2" style="color: #123F36;">Showcase</h1>
             <div class="col-lg-10 mx-auto text-center">
-                
-                <!-- ชุดรูปภาพฝึกงาน 2 รูป เรียงต่อกันแนวนอน (ซ้าย-ขวา) -->
-                <!-- ใช้ ratio ratio-16x9 เพื่อให้แสดงผลภาพเต็ม 100% ในสัดส่วนเท่ากันโดยไม่ถูกตัดขอบ -->
-                <div class="row g-4 mb-4 justify-content-center">
+                <div class="row g-4 mb-5 justify-content-center">
                     <div class="col-lg-6">
-                        <div class="ratio ratio-16x9 rounded-4 shadow-lg overflow-hidden bg-white p-2">
-                            <img src="j1.JPG" alt="AOT Internship 1" class="w-100 h-100 rounded-3" style="object-fit: contain;">
-                        </div>
+                        <img src="images.fah/j1.JPG" alt="AOT Internship 1" class="w-100 rounded-4 shadow-lg" style="height: 350px; object-fit: cover;">
                     </div>
                     <div class="col-lg-6">
-                        <div class="ratio ratio-16x9 rounded-4 shadow-lg overflow-hidden bg-white p-2">
-                            <img src="j2.jpg" alt="AOT Internship 2" class="w-100 h-100 rounded-3" style="object-fit: contain;">
-                        </div>
+                        <img src="images.fah/j2.JPG" alt="AOT Internship 2" class="w-100 rounded-4 shadow-lg" style="height: 350px; object-fit: cover;">
                     </div>
                 </div>
-
-                <!-- หัวข้อและคำบรรยายผลงานฝึกงาน -->
-                <h3 class="fw-bold mb-3" style="color: #C49A45;">Internship – Airports of Thailand (AOT)</h3>
+                <h3 class="fw-bold mb-3" style="color: #123F36;">Internship – Airports of Thailand (AOT)</h3>
                 <p class="fs-5 fw-medium text-start" style="color: #000000; line-height: 1.8;">
                     Completed an internship with Airports of Thailand Public Company Limited (AOT) in the Airport Property Management Department at Suvarnabhumi Airport. Participated in fieldwork involving property inspections, site surveys, and the collection of information related to airport-managed properties.
                     <br><br>
@@ -143,21 +83,15 @@
         </div>
     </section>
 
-    <!-- ==========================================
-         ส่วนที่ 4: Contact Me (ช่องทางการติดต่อ)
-         ========================================== -->
-    <section id="contact" class="container-fluid d-flex flex-column justify-content-center align-items-center text-center text-white py-5" style="background-color: #C49A45;">
+    <section id="contact" class="container-fluid d-flex flex-column justify-content-center align-items-center text-center text-white py-5" style="background-color: #123F36;">
         <h1 class="display-4 fw-bold mb-4">Contact Me</h1>
         <p class="fs-5 mb-4"><i class="bi bi-envelope-fill me-2"></i> 66050542@kmitl.ac.th</p>
-        
-        <!-- ลิงก์ Social Media พร้อมเอฟเฟกต์ซูมเวลาเอาเมาส์ชี้ -->
         <div class="d-flex gap-4">
             <a href="https://www.facebook.com/share/1FGiShNE4j/?mibextid=wwXIfr" target="_blank" class="text-white fs-1 hover-zoom"><i class="bi bi-facebook"></i></a>
             <a href="https://www.instagram.com/fa3saii__?stkn=czY3NTFxeWg3czNy&utm_source=qr" target="_blank" class="text-white fs-1 hover-zoom"><i class="bi bi-instagram"></i></a>
         </div>
     </section>
 
-    <!-- นำเข้า Bootstrap JS เพื่อให้เมนูมือถือทำงานได้ -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
