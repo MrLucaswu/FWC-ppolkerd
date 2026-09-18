@@ -1,38 +1,155 @@
-/* เว้นระยะให้ Fixed Navbar เพื่อไม่ให้บังเนื้อหาตอนโหลดหน้าเว็บ */
+/* 
+   ====================================================
+   ส่วนที่ 1: การตั้งค่าพื้นฐานของหน้าเว็บ (Body & HTML)
+   ==================================================== 
+*/
 body {
+    /* padding-top: 76px; 
+       คือการเว้นระยะพื้นที่ด้านบนของเว็บไว้ 76 พิกเซล 
+       เพื่อป้องกันไม่ให้แถบเมนู (Navbar) ที่เราล็อกติดขอบบนไว้ (fixed-top) ลงมาบังเนื้อหาบรรทัดแรกตอนที่เปิดหน้าเว็บครับ */
     padding-top: 76px; 
+    
+    /* font-family: กำหนดรูปแบบตัวอักษร (ฟอนต์) ของทั้งเว็บไซต์ 
+       ระบบจะไล่อ่านจากซ้ายไปขวา ถ้าเครื่องของคนที่เข้าเว็บไม่มีฟอนต์ Segoe UI ระบบก็จะใช้ Tahoma แทน ไล่ไปเรื่อยๆ ครับ */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* จัดการให้คลิปวิดีโอขยายเต็มหน้าจอพอดี และดันไปอยู่เลเยอร์หลังสุด */
-.video-bg {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: -1; 
-    transform: translate(-50%, -50%);
-    object-fit: cover;
-}
-
-/* ดันให้กล่องข้อความและปุ่ม ลอยขึ้นมาอยู่เหนือวิดีโอ */
-.content-overlay {
-    position: relative;
-    z-index: 1;
-}
-
-/* ลบ @keyframes oceanFlow ของเดิมทิ้งไปได้เลยครับ เพราะเราไม่ได้ใช้การไล่สีแล้ว */
-/* ทำให้การคลิกเมนูแล้วเลื่อนจอมีความนุ่มนวล (Smooth Scrolling) */
 html {
+    /* scroll-behavior: smooth; 
+       ทำให้เวลาเราคลิกเมนูด้านบน (เช่น กดปุ่ม About หรือ Contact) 
+       หน้าเว็บจะ "ค่อยๆ เลื่อนสมูทๆ" ลงมาหาเนื้อหานั้น แทนที่จะกระตุกวาร์ปข้ามไปเลย ช่วยให้เว็บดูพรีเมียมขึ้นมากครับ */
     scroll-behavior: smooth;
 }
 
-/* จัดระเบียบรูปภาพให้ยืดหยุ่นและไม่เสียสัดส่วน */
+
+/* 
+   ====================================================
+   ส่วนที่ 2: การจัดการวิดีโอพื้นหลัง (หน้า Welcome)
+   ==================================================== 
+*/
+.video-bg {
+    /* position: absolute; 
+       คือการดึงวิดีโอออกจากโครงสร้างบรรทัดปกติของเว็บ ทำให้มันสามารถนำไปซ้อนทับกับสิ่งอื่นได้ */
+    position: absolute;
+    
+    /* top: 50%; และ left: 50%; 
+       เลื่อนจุดเริ่มต้นของมุมวิดีโอมาไว้ตรง "กึ่งกลางหน้าจอ" พอดี */
+    top: 50%;
+    left: 50%;
+    
+    /* min-width: 100%; และ min-height: 100%; 
+       บังคับให้วิดีโอต้องกว้างและสูง "อย่างน้อย 100% ของหน้าจอเสมอ" เพื่อไม่ให้เกิดขอบดำด้านข้างหรือด้านล่าง */
+    min-width: 100%;
+    min-height: 100%;
+    
+    /* ให้ตัววิดีโอรักษาสัดส่วนความกว้าง/ความสูงตามไฟล์ต้นฉบับ */
+    width: auto;
+    height: auto;
+    
+    /* z-index: -1; 
+       คือคีย์เวิร์ดสำคัญที่สั่งให้วิดีโอ "จมไปอยู่เลเยอร์หลังสุด" (ทำตัวเป็นแบ็คกราวด์ให้สิ่งอื่นๆ) */
+    z-index: -1; 
+    
+    /* transform: translate(-50%, -50%); 
+       ดึงวิดีโอกลับมาทางซ้ายและขึ้นข้างบน 50% ของขนาดตัวมันเอง 
+       (ต้องใช้คู่กับ top/left 50% ด้านบน) เพื่อให้วิดีโอตั้งอยู่ "กึ่งกลางหน้าจอแบบเป๊ะๆ" */
+    transform: translate(-50%, -50%);
+    
+    /* object-fit: cover; 
+       ถ้าสัดส่วนวิดีโอกับหน้าจอไม่พอดีกัน (เช่น เปิดในมือถือแนวตั้ง แต่วิดีโอเป็นแนวนอน) 
+       คำสั่งนี้จะซูมและครอบ (Crop) วิดีโอให้เต็มกรอบโดยที่ภาพไม่บิดเบี้ยวหรือยืดผิดรูปครับ */
+    object-fit: cover;
+}
+
+
+/* 
+   ====================================================
+   ส่วนที่ 3: กล่องข้อความและปุ่มบนหน้า Welcome
+   ==================================================== 
+*/
+.content-overlay {
+    /* ต้องกำหนด position ให้เป็น relative ก่อน เพื่อให้คำสั่ง z-index ด้านล่างทำงานได้ครับ */
+    position: relative;
+    
+    /* z-index: 1; 
+       สั่งให้กล่องข้อความและปุ่ม "ลอยขึ้นมาอยู่ด้านหน้า" (ค่า z-index ยิ่งเยอะ ยิ่งอยู่หน้าสุด) 
+       เพื่อให้อยู่ทับวิดีโอที่มีค่า z-index เป็น -1 ครับ เราจะได้คลิกปุ่มได้ */
+    z-index: 1;
+}
+
+
+/* 
+   ====================================================
+   ส่วนที่ 4: การจัดระเบียบรูปภาพผลงาน (Portfolio Images)
+   ==================================================== 
+*/
 .portfolio-img {
     object-fit: cover;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+} /* <--- วงเล็บปิดตรงนี้ห้ามหายเด็ดขาดครับ */
+
+/* 
+   ====================================================
+   ส่วนที่ 5: ระบบ Parallax พื้นหลังสำหรับแต่ละ Section 
+   (เคลือบสีโปร่งแสง ทับรูป เพื่อให้อ่านตัวหนังสือได้ชัดเจน)
+   ==================================================== 
+*/
+.bg-parallax-about {
+    background-image: linear-gradient(rgba(255, 249, 242, 0.9), rgba(255, 249, 242, 0.9)), url('https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1920&q=80');
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+.bg-parallax-skills {
+    background-image: linear-gradient(rgba(232, 220, 196, 0.9), rgba(232, 220, 196, 0.9)), url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1920&q=80');
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+.bg-parallax-projects {
+    background-image: linear-gradient(rgba(255, 249, 242, 0.9), rgba(255, 249, 242, 0.9)), url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1920&q=80');
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+/* 
+   ====================================================
+   ส่วนที่ 6: ระบบ Parallax สำหรับแถบคั่นกลาง (Divider)
+   ==================================================== 
+*/
+.parallax-divider {
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 350px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* เคลือบฟิลเตอร์สีเขียวเข้มของธีมเว็บทับรูประบบ/วิศวกรรม */
+.divider-1 {
+    background-image: linear-gradient(rgba(18, 63, 54, 0.8), rgba(18, 63, 54, 0.8)), url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1920&q=80');
+}
+
+.divider-2 {
+    background-image: linear-gradient(rgba(18, 63, 54, 0.8), rgba(18, 63, 54, 0.8)), url('https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1920&q=80');
+}
+
+/* กล่องข้อความคั่นกลาง: ทำให้เป็นปุ่มแคปซูลสีครีมเงาสวยๆ */
+.center-text {
+    background-color: #FFF9F2;
+    color: #123F36;
+    padding: 15px 50px;
+    font-size: 26px;
+    font-weight: 800;
+    border-radius: 50px;
+    letter-spacing: 2px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    text-transform: uppercase;
 }
