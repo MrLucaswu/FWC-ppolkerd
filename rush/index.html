@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Our Rush Project</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="d-flex flex-column align-items-center justify-content-center text-white text-center vh-100 m-0 overflow-hidden">
+
+    <video autoplay loop muted playsinline class="video-bg">
+        <source src="sea.mp4" type="video/mp4">
+    </video>
+
+    <div class="content-overlay container px-3">
+        
+        <!-- หัวข้อใหญ่: ตัวหนังสือ #FFF9F2, กรอบ #123B5D, เงา #082C45 -->
+        <h1 class="display-3 fw-bold mb-4" style="color: #FFF9F2; -webkit-text-stroke: 2px #123B5D; text-shadow: 2px 2px 5px #082C45;">
+            Welcome to Our Rush Project
+        </h1>
+
+        <!-- หัวข้อเล็ก: ตัวหนังสือ #A82020, กรอบ #123B5D -->
+        <h3 class="mb-5 fw-light" style="color: #A82020; -webkit-text-stroke: 1px #123B5D; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">
+            Select whose portfolio you want to view:
+        </h3>
+
+        <div class="d-flex flex-wrap gap-4 justify-content-center">
+            <!-- ป้ายชื่อ FAH: สีพื้นหลัง #C49A45 -->
+            <a href="fah.html" class="btn btn-lg rounded-pill px-5 py-3 fw-bold shadow-lg" style="background-color: #C49A45; color: #fff;">FAH</a>
+            
+            <!-- ป้ายชื่อ FOCUS: สีพื้นหลัง #123F36 -->
+            <a href="focus.html" class="btn btn-lg rounded-pill px-5 py-3 fw-bold shadow-lg" style="background-color: #123F36; color: #fff;">FOCUS</a>
+        </div>
+        
+    </div>
+
+</body>
+</html>

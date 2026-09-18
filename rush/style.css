@@ -1,0 +1,38 @@
+/* เว้นระยะให้ Fixed Navbar เพื่อไม่ให้บังเนื้อหาตอนโหลดหน้าเว็บ */
+body {
+    padding-top: 76px; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* จัดการให้คลิปวิดีโอขยายเต็มหน้าจอพอดี และดันไปอยู่เลเยอร์หลังสุด */
+.video-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1; 
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+}
+
+/* ดันให้กล่องข้อความและปุ่ม ลอยขึ้นมาอยู่เหนือวิดีโอ */
+.content-overlay {
+    position: relative;
+    z-index: 1;
+}
+
+/* ลบ @keyframes oceanFlow ของเดิมทิ้งไปได้เลยครับ เพราะเราไม่ได้ใช้การไล่สีแล้ว */
+/* ทำให้การคลิกเมนูแล้วเลื่อนจอมีความนุ่มนวล (Smooth Scrolling) */
+html {
+    scroll-behavior: smooth;
+}
+
+/* จัดระเบียบรูปภาพให้ยืดหยุ่นและไม่เสียสัดส่วน */
+.portfolio-img {
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
