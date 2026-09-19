@@ -57,12 +57,9 @@ body {
 .social-icons {
     margin-bottom: 25px;
 }
-
-/* เพิ่มคำสั่งนี้เพื่อลบเส้นขีดใต้ลิงก์ออก */
 .social-icons a {
     text-decoration: none;
 }
-
 .social-icons img {
     width: 35px;
     margin: 0 10px;
